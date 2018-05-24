@@ -16,21 +16,17 @@ public class URLtranslatorController {
     
     @RequestMapping("/service/shorten")
     public String translate(@RequestParam(value="url", defaultValue="longurl.com/longPath/to/be/translated") String url) {
-        System.out.println("Url to translate: " + url);
         translator.putUrl(url);
-        System.out.println("Translated to: " + translator.getTranslatedUrl(url));
         return translator.getTranslatedUrl(url);
     }
 
     @RequestMapping("/service/count")
     public Integer count(@RequestParam(value="url", defaultValue=DOMAIN+"/1") String url) {
-        System.out.println("short-Url to count: " + url);
         return translator.getReverseTranslationCount(url);
     }
     
     @RequestMapping(value = "/{key}", method=RequestMethod.GET)
     public RedirectView redirectUrl(@PathVariable String key, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("Received shortened url to redirect: " + key);
         String translatedUrl = translator.
             getReverseTranslatedUrl(String.format("%s/%s",DOMAIN,key));
         RedirectView redirectView = new RedirectView();

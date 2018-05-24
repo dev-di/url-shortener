@@ -22,14 +22,10 @@ public class UrlTranslator {
 
     public void putUrl(String url) {
         String existingTranslation = dictionary.get(url);
-        System.out.println("putting");
-        System.out.println("existing translation: " +existingTranslation);
         if(existingTranslation==null) { 
             String newTranslation = String.format("%s/%s",DOMAIN,++counter);
             dictionary.put(url, newTranslation);
             reverseDictionary.put(newTranslation, url);
-        }else {
-            System.out.println("translation already exists, does not put");
         }
     }
     
@@ -40,14 +36,12 @@ public class UrlTranslator {
     }
 
     public String getTranslatedUrl(String url) {
-        System.out.println("translateURL!");
         String translatedUrl = dictionary.get(url);
         if(translatedUrl==null) return url;
         return translatedUrl;
     }
 
     String getReverseTranslatedUrl(String translatedUrl) {
-        System.out.println("reverse-translateURL!");
         String originalUrl = reverseDictionary.get(translatedUrl);
         
         if(originalUrl==null) {
@@ -62,8 +56,6 @@ public class UrlTranslator {
     }
 
     Integer getReverseTranslationCount(String translatedUrl) {
-        System.out.println("getReverseTranslationCount!");
-        
         Integer nrOfPolls = reverseTranslations.get(translatedUrl);
         if(null == nrOfPolls) return 0;
         return nrOfPolls;
