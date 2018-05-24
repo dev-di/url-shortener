@@ -5,16 +5,16 @@ import java.util.Map;
 
 public class UrlTranslator {
 
-    private Map<String,String> dictionary;
-    private Map<String,String> reverseDictionary;
+    private Map<String,String>  dictionary;
+    private Map<String,String>  reverseDictionary;
     private Map<String,Integer> reverseTranslations;
     
     private final String DOMAIN;
     private int counter;
     
     public UrlTranslator(String domain) {
-        dictionary        = new HashMap();
-        reverseDictionary = new HashMap();
+        dictionary          = new HashMap();
+        reverseDictionary   = new HashMap();
         reverseTranslations = new HashMap();
         DOMAIN = domain;
         counter = 0;
