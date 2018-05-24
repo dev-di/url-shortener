@@ -1,7 +1,7 @@
 /**
  * Class to start up the Spring Boot service
  */
-package com.example.hellospringboot;
+package com.devdi.urlshortener;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

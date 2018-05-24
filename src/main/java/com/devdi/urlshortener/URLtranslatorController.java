@@ -1,4 +1,4 @@
-package com.example.hellospringboot;
+package com.devdi.urlshortener;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

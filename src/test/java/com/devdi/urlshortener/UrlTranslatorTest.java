@@ -3,8 +3,9 @@
  * Also works as a documentation of the functionality 
  * 
  */
-package com.example.hellospringboot;
+package com.devdi.urlshortener;
 
+import com.devdi.urlshortener.UrlTranslator;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

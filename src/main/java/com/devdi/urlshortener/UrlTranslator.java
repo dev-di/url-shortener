@@ -1,4 +1,4 @@
-package com.example.hellospringboot;
+package com.devdi.urlshortener;
 
 import java.util.HashMap;
 import java.util.Map;
