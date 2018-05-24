@@ -1,42 +1,44 @@
-url-shortener project by Diana
+URL-SHORTENER CHALLENGE
+	Java project written by Diana Ekström in May 2018. This document provides installation- and running instructions.
 
 Introduction
-  A url-shortener service is a service redirecting a short url to a longer, assumingly difficult, url.
-  This project is part of a coding challenge.
-  In this instructions we will run the service only on our local host.
-  
+	A url-shortener service is a service that redirects a short url to a longer, url.
+	This project is part of a coding challenge.
+	In this instructions we will install and run the service on our local host.
+
 Main technologies used in this project
-  Maven, Java, jUnit4, Spring Boot
+	Java, Spring Boot, jUnit4, Maven
 
 How to install
-  Import as a Maven project in your java IDE from 
-  git@github.com:dev-di/url-shortener.git
+	Import as a Maven project in your java IDE from 
+	git@github.com:dev-di/url-shortener.git
 
 How to start the service
-  The service could be started by pressing run in your IDE, or from the command line the following way: 
-  Move to the project directory 
-  execute the following command: mvn spring-boot:run
-  After the start up open your web browser to run the service
-  
+	The service could be started by pressing run in your IDE, or from the 
+	command line by executing the command mvn spring-boot:run 
+	from the project directory. The service is then run from your web browser.
+
 Example
-  Assuming the application is runing for the first time on localhost port 8080
+	Assuming the application is running for the first time on localhost port 8080. 
+
+	Request: localhost:8080/service/shorten?url=youtube.com/watch?v=dQw4w9WgXcQ
+	Answer:  localhost:8080/1
+
+	This request will put the url youtube.com/watch?v=dQw4w9WgXcQ in the service url dictionary and map it to the new url localhost:8080/1
+
+	If you then put localhost:8080/1 in your browser, you will be automatically redirected to youtube.com/watch?v=dQw4w9WgXcQ
+
+	To check how many times localhost:8080/1 have been used: 
   
-  Request: localhost:8080/service/shorten?url=youtube.com/watch?v=dQw4w9WgXcQ
-  Answer: localhost:8080/1
-  This request will put the url youtube.com/watch?v=dQw4w9WgXcQ in the service url dictionary and 
-  map it to the new url localhost:8080/1
-  If you then put localhost:8080/1 in your browser, you will be automatically redirected to youtube.com/watch?v=dQw4w9WgXcQ
-  
-  To check how many times localhost:8080/1 have been used: 
-  Request: localhost:8080/service/count?url=localhost:8080/1
-  The answer will be the number of redirects from localhost:8080/1 to youtube.com/watch?v=dQw4w9WgXcQ the service has performed
-  
+	Request: localhost:8080/service/count?url=localhost:8080/1
+	The answer will be the number of redirects from localhost:8080/1 to youtube.com/watch?v=dQw4w9WgXcQ the service has performed
+
 More documentation
-  There are more examples of the behaviour of the service in the jUnit test
-  
-Suggestion of future improvements of the service
-  Save data on the disc (As for now, the service will forget all mappings and countings when it restarts)
-  Do not only use digits in the path (if letters are also used, the path will be of shorter length)
-  Randomize the path to make it less predictable
-  Allow customised path names
-  Blacklisting of hazardous domains
+	There are more examples of the behaviour of the service in the jUnit test
+
+Suggestion of some future improvements of the service
+	* Save data on the disc (As for now, the service will forget all mappings and 
+	countings when it restarts)
+	* Do not only use base-10- digits in the path (if letters are also used, the path will 
+	be of shorter length)
+	* Allow customised path names
