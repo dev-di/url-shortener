@@ -1,7 +1,7 @@
 url-shortener project by Diana
 
 Introduction
-  A url-shortener service is a service redirecting a short url to a longer, assumingly difficult url.
+  A url-shortener service is a service redirecting a short url to a longer, assumingly difficult, url.
   This project is part of a coding challenge.
   In this instructions we will run the service only on our local host.
   
@@ -13,9 +13,10 @@ How to install
   git@github.com:dev-di/url-shortener.git
 
 How to start the service
-  The service could be started from your IDE with the run command, or from the command line the following way: 
+  The service could be started by pressing run in your IDE, or from the command line the following way: 
   Move to the project directory 
   execute the following command: mvn spring-boot:run
+  After the start up open your web browser to run the service
   
 Example
   Assuming the application is runing for the first time on localhost port 8080
@@ -39,4 +40,3 @@ Suggestion of future improvements of the service
   Randomize the path to make it less predictable
   Allow customised path names
   Blacklisting of hazardous domains
-  
